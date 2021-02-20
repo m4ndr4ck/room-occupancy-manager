@@ -11,4 +11,19 @@
 
     <artifactId>bootstrap</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.smart-host</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.smart-host</groupId>
+            <artifactId>application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.smart-host</groupId>
+            <artifactId>framework</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
