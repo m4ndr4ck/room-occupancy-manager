@@ -6,17 +6,17 @@ import com.smarthost.domain.Customer;
 import com.smarthost.domain.Occupancy;
 import com.smarthost.domain.Room;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-@RequestScoped
+@ApplicationScoped
 public class RoomOccupancyPortIn implements RoomOccupancyUseCase {
 
     @Inject
-    RoomOccupancyPortOut roomOccupancyPortOut;
+    public RoomOccupancyPortOut roomOccupancyPortOut;
 
     @Override
     public HashMap<Room.Category, Occupancy> getRoomOccupancy(RoomOccupancyCommand roomOccupancyCommand) {
@@ -26,6 +26,6 @@ public class RoomOccupancyPortIn implements RoomOccupancyUseCase {
     }
 
     private List<Customer> getCustomers(){
-        return null;
+        return roomOccupancyPortOut.getCustomers();
     }
 }
