@@ -11,4 +11,5 @@ module com.smarthost.framework {
     requires com.fasterxml.jackson.jaxrs.json;
 
     requires microprofile.openapi.api;
+    requires org.mockito;
 }

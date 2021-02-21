@@ -4,7 +4,6 @@ module com.smarthost.application {
     requires java.validation;
     requires jakarta.inject.api;
     requires jakarta.enterprise.cdi.api;
-    requires quarkus.junit5.mockito;
     requires jakarta.el.api;
 
     exports com.smarthost.application.usecases;

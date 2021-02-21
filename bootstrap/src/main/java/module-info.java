@@ -1,4 +1,4 @@
-module com.smarthost.boostrap {
+module com.smarthost.bootstrap {
     requires quarkus.core;
     requires quarkus.smallrye.openapi;
     requires smallrye.open.api.core;
