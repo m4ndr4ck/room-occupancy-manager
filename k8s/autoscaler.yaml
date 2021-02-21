@@ -1,0 +1,13 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+  name: room-occupancy-manager
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: room-occupancy-manager
+    apiVersion: apps/v1
+  minReplicas: 2
+  # Criticity - Low: 4 | Medium: 8 | High: 12
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 50

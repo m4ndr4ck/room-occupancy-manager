@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: room-occupancy-manager
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - room-occupancy-manager
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 8080
+        host: room-occupancy-manager

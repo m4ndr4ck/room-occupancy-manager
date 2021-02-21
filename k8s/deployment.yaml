@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: room-occupancy-manager
+  annotations:
+    "sidecar.jaegertracing.io/inject": "true"
+  labels:
+    app: room-occupancy-manager
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: room-occupancy-manager
+  template:
+    metadata:
+      labels:
+        app: room-occupancy-manager
+    spec:
+      containers:
+        - name: room-occupancy-manager
+          image: room-occupancy-manager:latest
+          envFrom:
+          - configMapRef:
+              name: room-occupancy-manager
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            periodSeconds: 3
+          resources:
+            requests:
+              # Low criticity: 256Mi | Medium Criticity: 512Mi | High Criticity: >=1024Mi
+              memory: "256Mi"
+              # Low criticity: 500Mi | Medium Criticity: 1000Mi | High Criticity: >=2000Mi
+              cpu: "500m" # 1000m = 1vCPU
+            limits:
+              # Low criticity: 512Mi | Medium Criticity: 1024Mi | High Criticity: >=2048Mi
+              memory: "512Mi"
+              # Low criticity: 1000m | Medium Criticity: 2000m | High Criticity: >=4000m
+              cpu: "1000m" # 1000m = 1vCPU
+          ports:
+            - containerPort: 8080
