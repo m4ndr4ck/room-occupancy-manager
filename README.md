@@ -4,10 +4,12 @@
 
 ## Java Modules and Clean/Hexagonal Architecture
 
+Java 11, Quarkus and Maven are the technologies utilized to build this project.
+
 For this application architecture I've defined the following hexagons:
 
 - <b>Domain</b>
-  <br> The most critical software code resides on Domain. It's here that we define entities and rules for Guests, Rooms, and so on.<br><br>
+  <br> The most critical software code resides on Domain. It's here that we define entities and rules for Guests, Rooms, and so on.   <br><br>
 - <b>Application</b>
   <br> Application is a place to handle application-specific rules. They are operations not directly related to the domain problem but are needed to fulfill business needs—for example, data transformation, automation, and things like that we put in Application. We execute application specific-rules with Ports and Use Cases.<br><br>
 - <b>Framework</b>
