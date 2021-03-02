@@ -18,13 +18,13 @@ spec:
     spec:
       containers:
         - name: room-occupancy-manager
-          image: room-occupancy-manager:latest
+          image: s4intlaurent/room-occupancy-manager:latest
           envFrom:
           - configMapRef:
               name: room-occupancy-manager
           livenessProbe:
             httpGet:
-              path: /actuator/health
+              path: /
               port: 8080
             initialDelaySeconds: 60
             timeoutSeconds: 5
