@@ -2,11 +2,7 @@
 
 ## -- Room Occupancy Manager --
 
-<<<<<<< HEAD
-## Java Modules and Clean/Hexagonal Architecture
-=======
 **Java Modules and Clean/Hexagonal Architecture**
->>>>>>> 7d2db01... Fix readme
 
 Java 11, Quarkus and Maven are the technologies utilized to build this project.
 
@@ -34,16 +30,11 @@ With clean architecture, we aim to decrease technical debt in the long run by de
 
 **Unit Tests**
 
-<<<<<<< HEAD
-To make sure the APIs are right, we also the endpoint against each test case.
-=======
 Unit tests are executed on Domain to assure the algorithms and business rules are working as expected.
->>>>>>> d5a9cb9... Add markdown to Readme
 
 **Integration Tests**
 
 To make sure the APIs are right, we also test the endpoint against each test case. Those tests occur on Framework.
-
 
 **To compile and run**
 ```
